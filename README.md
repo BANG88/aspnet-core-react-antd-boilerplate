@@ -13,6 +13,10 @@ Then clone this boilerplate to your local disk
 
 git clone git@github.com:bang88/aspnet-core-react-antd-boilerplate.git
 
+# dotnet restore deps
+
+dotnet restore
+
 ```
 
 start a local server
