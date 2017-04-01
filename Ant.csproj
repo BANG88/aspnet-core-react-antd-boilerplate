@@ -16,7 +16,7 @@
     <None Remove="yarn.lock" />
 
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
-    <Content Remove="ClientApp\**" />
+    <Content Remove="src\**" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="Restore">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
@@ -26,7 +26,7 @@
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <DistFiles Include="wwwroot\dist\**; src\dist\**" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
