@@ -7,6 +7,9 @@
 
 You need install <https://www.asp.net/core> before start.
 
+and make sure yarn is installed.
+ 
+
 Then clone this boilerplate to your local disk
 
 ```sh
