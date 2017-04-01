@@ -28,11 +28,11 @@ Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
-/wwwroot/dist/**
+/build/dist/**
 /src/dist/**
 
 # Workaround for https://github.com/aspnet/JavaScriptServices/issues/235
-!/wwwroot/dist/_placeholder.txt
+!/build/dist/_placeholder.txt
 !/src/dist/_placeholder.txt
 
 /yarn.lock

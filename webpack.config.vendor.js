@@ -43,7 +43,7 @@ module.exports = (env) => {
     };
 
     const clientBundleConfig = merge(sharedConfig, {
-        output: { path: path.join(__dirname, 'wwwroot', 'dist') },
+        output: { path: path.join(__dirname, 'build', 'dist') },
         module: {
             rules: [
                 { test: /\.css(\?|$)/, use: extractCSS.extract({ use: 'css-loader' }) }
@@ -52,7 +52,7 @@ module.exports = (env) => {
         plugins: [
             extractCSS,
             new webpack.DllPlugin({
-                path: path.join(__dirname, 'wwwroot', 'dist', '[name]-manifest.json'),
+                path: path.join(__dirname, 'build', 'dist', '[name]-manifest.json'),
                 name: '[name]_[hash]'
             })
         ].concat(isDevBuild ? [] : [

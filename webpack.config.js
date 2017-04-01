@@ -25,7 +25,7 @@ module.exports = (env) => {
     });
 
     // Configuration for client-side bundle suitable for running in browsers
-    const clientBundleOutputDir = './wwwroot/dist';
+    const clientBundleOutputDir = './build/dist';
     const clientBundleConfig = merge(sharedConfig(), {
         entry: { 'main-client': './src/boot-client.tsx' },
         module: {
@@ -39,7 +39,7 @@ module.exports = (env) => {
             new ExtractTextPlugin('site.css'),
             new webpack.DllReferencePlugin({
                 context: __dirname,
-                manifest: require('./wwwroot/dist/vendor-manifest.json')
+                manifest: require('./build/dist/vendor-manifest.json')
             })
         ].concat(isDevBuild ? [
             // Plugins that apply in development builds only
