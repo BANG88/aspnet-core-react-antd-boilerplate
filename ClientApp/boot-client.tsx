@@ -1,5 +1,5 @@
 import './css/site.css';
-import 'bootstrap';
+import "antd/dist/antd.css"
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { browserHistory, Router } from 'react-router';

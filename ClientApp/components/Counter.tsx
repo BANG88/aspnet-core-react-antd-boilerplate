@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { ApplicationState }  from '../store';
+import { ApplicationState } from '../store';
 import * as CounterStore from '../store/Counter';
 import * as WeatherForecasts from '../store/WeatherForecasts';
+import { Badge, Button, Icon } from 'antd';
 
 type CounterProps = CounterStore.CounterState & typeof CounterStore.actionCreators;
 
@@ -13,10 +14,18 @@ class Counter extends React.Component<CounterProps, void> {
             <h1>Counter</h1>
 
             <p>This is a simple example of a React component.</p>
+            <p>Current count: <strong>{this.props.count}</strong></p>
 
-            <p>Current count: <strong>{ this.props.count }</strong></p>
+            <div style={{ margin: 16 }}>
+                <Badge count={this.props.count}>
+                    <span style={{ width: 42, height: 42, borderRadius: 6, background: '#eee', display: 'inline-block' }}></span>
+                </Badge>
+            </div>
 
-            <button onClick={ () => { this.props.increment() } }>Increment</button>
+            <Button onClick={() => this.props.increment()} type="primary" ghost>
+                <Icon type="plus" /> increment
+            </Button>
+
         </div>;
     }
 }
