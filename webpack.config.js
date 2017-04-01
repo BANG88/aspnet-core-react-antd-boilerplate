@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const merge = require('webpack-merge');
-
+process.noDeprecation = true
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
 

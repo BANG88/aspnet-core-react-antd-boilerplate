@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
-
+process.noDeprecation = true
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
     const extractCSS = new ExtractTextPlugin('vendor.css');
