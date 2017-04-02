@@ -5,7 +5,7 @@
     <IsPackable>true</IsPackable>
     <OutputType>Exe</OutputType>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <RuntimeIdentifiers>win7-x64;ubuntu.16.04-x64;osx.10.12-x64;</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win7-x64;win10-x64;win8-x64;ubuntu.16.04-x64;osx.10.12-x64;</RuntimeIdentifiers>
     <SuppressDockerTargets>True</SuppressDockerTargets>
   </PropertyGroup>
   <ItemGroup>
@@ -22,7 +22,7 @@
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="src\**" />
   </ItemGroup>
-  <Target Name="RunWebpack" AfterTargets="Restore">
+  <Target Name="RunWebpack" AfterTargets="Restore;ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
     <Exec Command="yarn" />
     <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />

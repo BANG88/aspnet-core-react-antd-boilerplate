@@ -40,7 +40,14 @@ module.exports = (env) => {
     entry: { 'main-client': './src/boot-client.tsx' },
     module: {
       rules: [
-        { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) },
+        { test: /\.css$/, use: ExtractTextPlugin.extract({
+            use: {
+              loader: 'css-loader',
+              options: {
+                minimize: true
+              }
+            }
+        }) },
         { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
       ]
     },
