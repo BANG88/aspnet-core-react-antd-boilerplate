@@ -70,14 +70,14 @@ module.exports = (env) => {
     plugins: [
       new webpack.DllReferencePlugin({
         context: __dirname,
-        manifest: require('./src/dist/vendor-manifest.json'),
+        manifest: require('./build/dist/server/vendor-manifest.json'),
         sourceType: 'commonjs2',
         name: './vendor'
       })
     ],
     output: {
       libraryTarget: 'commonjs',
-      path: path.join(__dirname, './src/dist')
+      path: path.join(__dirname, './build/dist/server')
     },
     target: 'node',
     devtool: 'inline-source-map'

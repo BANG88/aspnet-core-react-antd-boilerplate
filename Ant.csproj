@@ -2,7 +2,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <IsPackable>false</IsPackable>
+    <IsPackable>true</IsPackable>
+    <OutputType>Exe</OutputType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <RuntimeIdentifiers>win7-x64;ubuntu.16.04-x64;osx.10.12-x64;</RuntimeIdentifiers>
+    <SuppressDockerTargets>True</SuppressDockerTargets>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
@@ -26,7 +30,7 @@
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
-      <DistFiles Include="build\dist\**; src\dist\**" />
+      <DistFiles Include="build\dist\**" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
