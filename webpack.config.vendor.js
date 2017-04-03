@@ -69,7 +69,7 @@ module.exports = (env) => {
     target: 'node',
     resolve: { mainFields: ['main'] },
     output: {
-      path: path.join(__dirname, 'build', 'dist', 'server'),
+      path: path.join(__dirname, 'build', 'server'),
       libraryTarget: 'commonjs2'
     },
     module: {
@@ -78,7 +78,7 @@ module.exports = (env) => {
     entry: { vendor: ['aspnet-prerendering', 'react-dom/server'] },
     plugins: [
       new webpack.DllPlugin({
-        path: path.join(__dirname, 'build', 'dist', 'server', '[name]-manifest.json'),
+        path: path.join(__dirname, 'build', 'server', '[name]-manifest.json'),
         name: '[name]_[hash]'
       })
     ]

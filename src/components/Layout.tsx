@@ -27,21 +27,21 @@ export default class AppLayout extends React.Component<LayoutProps, any> {
                         <Icon type="windows" />
                         {!this.state.collapsed && <span style={{ marginLeft: 10 }}>ANT DESIGN</span>}
                     </div>
-                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                        <Menu.Item key="1">
-                            <Link to={'/'} activeClassName='active'>
+                    <Menu theme="dark" mode="inline">
+                        <Menu.Item key="1" style={{ padding: '0!important' }}>
+                            <Link to={'/'} style={{ paddingLeft: 24 }} activeClassName='ant-menu-item-selected'>
                                 <Icon type="home" />
                                 <span className="nav-text">Home</span>
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="2">
-                            <Link to={'/counter'} activeClassName='active'>
+                        <Menu.Item key="2" style={{ padding: '0!important' }}>
+                            <Link to={'/counter'} style={{ paddingLeft: 24 }} className="menu-item" activeClassName='ant-menu-item-selected'>
                                 <Icon type="plus" />
                                 <span className="nav-text">Counter</span>
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="3">
-                            <Link to={'/fetchdata'} activeClassName='active'>
+                        <Menu.Item key="3" style={{ padding: '0!important' }}>
+                            <Link to={'/fetchdata'} style={{ paddingLeft: 24 }} className="menu-item" activeClassName='ant-menu-item-selected'>
                                 <Icon type="cloud" />
                                 <span className="nav-text">Fetch data</span>
                             </Link>
