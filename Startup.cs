@@ -44,7 +44,7 @@ namespace Ant
                     HotModuleReplacement = true,
                     ReactHotModuleReplacement = true
                 });
-            }
+            }   
             else
             {
                 app.UseExceptionHandler("/Home/Error");
